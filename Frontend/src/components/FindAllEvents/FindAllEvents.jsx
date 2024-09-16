@@ -17,7 +17,7 @@ const FindAllEvents = () => {
 
     fetchEventsData();
   }, []);
-
+// We are going to use the return component which is going to return the HTML-like jsx code that will be displayed on the webpage 
   return (
     <div className="events-container">
       <h1>Find All Events</h1>
