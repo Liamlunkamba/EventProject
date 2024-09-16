@@ -11,7 +11,7 @@ const Register = () => {
     email: "",
     password: "",
   });
-
+// The setFormData function will update these values, allowing the app to keep track of what the user has entered.
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
