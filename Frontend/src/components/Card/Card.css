@@ -11,7 +11,7 @@
 .card:hover {
   transform: translateY(-10px);
 }
-
+  /* styling the card image  */
 .card-image {
   width: 100%;
   height: 200px;
@@ -21,14 +21,14 @@
 .card-content {
   padding: 20px;
 }
-
+/* styling the headers */
 .card-content h1 {
   font-size: 24px;
   margin-bottom: 10px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
-
+/* styling the headers */
 .card-content h2,
 .card-content h3 {
   font-size: 16px;
@@ -44,7 +44,7 @@
   margin-bottom: 15px;
   font-family: "Poppins", sans-serif;
 }
-
+/* styling the attendees info card  */
 .attendees-info {
   font-size: 14px;
   font-weight: 500;
