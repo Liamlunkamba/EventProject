@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Card.css";
-
+//I am now goin to create a UseNavigation hook which will navigate between different pages without reloading the whole app
 const Card = ({ id, name, address, date, URL, description, attendees }) => {
   const navigate = useNavigate();
 

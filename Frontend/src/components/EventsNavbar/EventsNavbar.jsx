@@ -21,7 +21,7 @@ const EventsNavbar = () => {
       <label htmlFor="navbar-toggle" className="navbar-icon">
         &#9776;
       </label>
-      {/* creating an unordered list that contain links to of the navbar */}
+      {/* creating an unordered list that contain links of the navbar */}
       <ul className="navbar-links">
         {isLoggedIn ? (
           <>
