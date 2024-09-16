@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
-
+//Now I am going to add a useState() that will allow all the state inside a functional component
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
