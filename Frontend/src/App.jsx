@@ -51,7 +51,7 @@ function App() {
         ></div>
 
         {location.pathname !== "/admin" && <EventsNavbar />}
-
+        {/*  now going to add routes to the navbar */}
         <Routes>
           <Route path="/" element={<EventsHomePage />} />
           <Route path="/findAllEvents" element={<FindAllEvents />} />
