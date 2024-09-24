@@ -14,7 +14,7 @@ const Register = () => {
 // The setFormData function will update these values, allowing the app to keep track of what the user has entered.
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate();//
   const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
@@ -26,10 +26,15 @@ const Register = () => {
   };
 
   const handleSubmit = async (e) => {
+    //The handleSubmit function is called when the form is submitted
+    //It clears any existing error or success messages 
+    //It will send a POST request to the server with the form data
     e.preventDefault();
     setErrorMessage("");
     setSuccessMessage("");
-
+    //If successful, it sets a success message, logs the response, calls a login function with 
+    //the user data, and navigates to the home page after a 2 second delay
+    //If there's an error, it sets an appropriate error message
     try {
       const response = await axios.post(
         "http://localhost:8080/attendee/register",
