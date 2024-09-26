@@ -49,6 +49,9 @@ const EventsNavbar = () => {
             <li>
               <Link to="/about">About Us</Link>
             </li>
+            <li>
+              <Link to="/Reach">Reach Us</Link>
+            </li>
           </>
         )}
       </ul>

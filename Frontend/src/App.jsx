@@ -15,6 +15,7 @@ import { AuthProvider } from "./components/auth/AuthContext";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import ContactUs from "./components/ContactUs/ContactUs";
 import AboutUs from "./components/AboutUs/AboutUs";
+import ReachUs from "./components/ReachUs/ReachUs";
 
 function App() {
   const location = useLocation();
@@ -61,6 +62,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/reach" element={<ReachUs />} />
         </Routes>
       </div>
     </AuthProvider>

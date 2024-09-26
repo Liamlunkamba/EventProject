@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     //Login updates the user state with the provided data and sets isLoggedIn to tre
     setUser(userData);
-    console.log(userData);
+    console.log("here",userData);
     setIsLoggedIn(true);
   };
 //Logout resets the user state and sets isLoggedIn to false 
