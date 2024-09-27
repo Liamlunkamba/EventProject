@@ -28,7 +28,7 @@ const EventsNavbar = () => {
             <li>
               <li>
                 <Link to="/contact">Contact Us</Link>{" "}
-                {/* Add Contact Us link */}
+                {/* Add  Us link */}
               </li>
               <button onClick={handleLogout} className="logout-button">
                 Logout
@@ -44,13 +44,10 @@ const EventsNavbar = () => {
               <Link to="/register">Register</Link>
             </li>
             <li>
-              <Link to="/contact">Contact Us</Link>
-            </li>
-            <li>
               <Link to="/about">About Us</Link>
             </li>
             <li>
-              <Link to="/Reach">Reach Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
           </>
         )}

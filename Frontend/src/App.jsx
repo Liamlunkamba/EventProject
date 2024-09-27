@@ -13,9 +13,8 @@ import Register from "./components/Register/Register";
 import CardDetail from "./components/Card/CardDetail";
 import { AuthProvider } from "./components/auth/AuthContext";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
-import ContactUs from "./components/ContactUs/ContactUs";
 import AboutUs from "./components/AboutUs/AboutUs";
-import ReachUs from "./components/ReachUs/ReachUs";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 function App() {
   const location = useLocation();
@@ -60,9 +59,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/card/:id" element={<CardDetail />} />
           <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/reach" element={<ReachUs />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>
     </AuthProvider>
