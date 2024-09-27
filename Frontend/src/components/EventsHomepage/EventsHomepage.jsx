@@ -10,7 +10,7 @@ const EventsHomePage = () => {
     <div
       className="home-container"
       style={{
-        backgroundImage: `url(https://cdn.leonardo.ai/users/ccf4405d-bf58-4a18-b826-2308c145009f/generations/5368bf68-c865-4ab9-b23d-a4e1f1ac8d34/Leonardo_Phoenix_A_vibrant_and_bustling_urban_scene_showcasing_0.jpg)`,
+        backgroundImage: `url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
       }}
     >
       <header className="home-header">
