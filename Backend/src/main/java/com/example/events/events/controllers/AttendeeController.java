@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.events.events.models.Attendee;
+import com.example.events.events.models.Event;
 import com.example.events.events.services.AttendeeService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("attendee")
+@RequestMapping("/attendee")
 public class AttendeeController {
 
 
@@ -89,6 +90,11 @@ public class AttendeeController {
         } catch (IllegalStateException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
+
+    @GetMapping("/{attendeeId}/events")
+    public List<Event> getAttendeeEvents(@PathVariable Long attendeeId) {
+        return attendeeService.getAttendeesEvents(attendeeId);
     }
 
 }

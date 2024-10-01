@@ -27,5 +27,5 @@ public class Attendee {
     private String lastName;
     private String email;
     private String password;
-    private List<String> eventsAttending;
-}
+    private List<String> eventsAttending = new ArrayList<>();
+};

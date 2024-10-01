@@ -3,6 +3,7 @@ package com.example.events.events.services;
 import java.util.List;
 
 import com.example.events.events.models.Attendee;
+import com.example.events.events.models.Event;
 
 public interface AttendeeService {
 
@@ -16,5 +17,8 @@ public interface AttendeeService {
 
     Attendee login(String email, String password);
     void deleteAttendee(Long id);
+
+
+    List<Event> getAttendeesEvents(Long id);
 
 }

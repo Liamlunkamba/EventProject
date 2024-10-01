@@ -7,4 +7,4 @@ import com.example.events.events.models.Event;
 public interface EventRepository extends JpaRepository<Event, Long> {
 
 
-}
+};
