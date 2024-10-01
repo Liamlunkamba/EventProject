@@ -15,7 +15,7 @@ const EventsNavbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Events</Link>
+        <Link to="/">EventsFinder</Link>
       </div>
       <input type="checkbox" id="navbar-toggle" className="navbar-toggle" />
       <label htmlFor="navbar-toggle" className="navbar-icon">
@@ -26,10 +26,9 @@ const EventsNavbar = () => {
         {isLoggedIn ? (
           <>
             <li>
-              <li>
-                <Link to="/contact">Contact Us</Link>{" "}
-                {/* Add  Us link */}
-              </li>
+            
+                <Link to="/contact"> <button  className="/contact"> Contact Us</button> </Link>
+              
               <button onClick={handleLogout} className="logout-button">
                 Logout
               </button>
