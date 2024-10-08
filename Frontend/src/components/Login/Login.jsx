@@ -78,6 +78,18 @@ const Login = () => {
           required
         />
 
+{/* <label htmlFor="password">Password</label>
+<input
+  type="password"
+  id="password"
+  name="password"
+  value={formData.password} 
+  placeholder="Enter your password"
+  required
+/> */}
+     {/* The above code did not work so I had to create another one which I had to implement other codes 
+      I noticed that the above code was not working because it would
+       prevent the input field from updating as the user types because the onChange event won’t trigger.*/}
         <label htmlFor="password">Password</label>
         <input
           type="password"

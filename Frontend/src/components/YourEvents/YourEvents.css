@@ -1,0 +1,48 @@
+.container {
+    max-width: 1000px;
+    margin: auto; /* Center the container horizontally */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure that cards wrap if they overflow */
+  }
+  
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the row horizontally */
+  }
+  
+  .card {
+    transition: transform 0.2s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }

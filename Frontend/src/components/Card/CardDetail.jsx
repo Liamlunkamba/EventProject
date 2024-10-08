@@ -1,6 +1,8 @@
+
 import React, { useState, useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { AuthContext } from "../auth/AuthContext";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -8,6 +10,7 @@ import "./CardDetail.css";
 
 const CardDetail = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { id, name, address, date, URL, description, attendees } =
     location.state;
 
@@ -67,6 +70,8 @@ const CardDetail = () => {
       });
 
       setMessage("Successfully registered for the event!");
+      setTimeout(()=>navigate("/findAllEvents"),1000)
+      
     } catch (error) {
       setMessage("Failed to register for the event. Please try again.");
       console.error("Error during attend request:", error);
@@ -95,6 +100,8 @@ const CardDetail = () => {
       });
 
       setMessage("Successfully withdrawn from the event!");
+      setTimeout(()=>navigate("/findAllEvents"),1000)
+      
     } catch (error) {
       setMessage("Failed to withdraw from the event. Please try again.");
       console.error("Error during withdraw request:", error);

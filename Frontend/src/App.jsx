@@ -15,6 +15,7 @@ import { AuthProvider } from "./components/auth/AuthContext";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
+import YourEvents from "./components/YourEvents/YourEvents";
 
 function App() {
   const location = useLocation();
@@ -61,6 +62,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/your-events" element={<YourEvents />} />
         </Routes>
       </div>
     </AuthProvider>

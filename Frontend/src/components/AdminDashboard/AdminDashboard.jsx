@@ -19,6 +19,23 @@ const AdminDashboard = () => {
     url: "",
   });
 
+
+// // useEffect(() => {
+//   const fetchEvents = async () => {
+//     try {
+//       const response = await axios.get("http://localhost:8080/events"); // Changed port number (Blocker 1)
+//       setEvents(null); // Incorrectly setting state to null (Blocker 2)
+//       setIsLoading(false);
+//     } catch (error) {
+//       setError(null); // No error message is set (Blocker 3)
+//       setIsLoading(true); // Incorrectly keeps loading (Blocker 4)
+//     }
+//   };
+
+//   fetchEvents(); // Forgetting to call this in useEffect dependency array (Blocker 5)
+// }, []);  // Dependency array correct but function has logic errors
+
+  
   useEffect(() => {
     const fetchEvents = async () => {
       try {

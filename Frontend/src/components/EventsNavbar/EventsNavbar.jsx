@@ -15,23 +15,25 @@ const EventsNavbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">EventsFinder</Link>
+        <Link to="/">Events</Link>
       </div>
       <input type="checkbox" id="navbar-toggle" className="navbar-toggle" />
       <label htmlFor="navbar-toggle" className="navbar-icon">
         &#9776;
       </label>
-      {/* creating an unordered list that contain links of the navbar */}
       <ul className="navbar-links">
         {isLoggedIn ? (
           <>
             <li>
-            
-                <Link to="/contact"> <button  className="/contact"> Contact Us</button> </Link>
-              
-              <button onClick={handleLogout} className="logout-button">
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/your-events">Your Events</Link>
+            </li>
+            <li>
+              <Link onClick={handleLogout} className="logout-button">
                 Logout
-              </button>
+              </Link>
             </li>
           </>
         ) : (

@@ -15,7 +15,7 @@ const EventsHomePage = () => {
     >
       <header className="home-header">
         <h1>Welcome to the Events Platform</h1>
-        <p>Discover and participate in amazing events happening near you.</p>
+        <p>Discover and participate in amazing events hosted by your organization.</p>
 
         {isLoggedIn ? (
           <Link className="cta-button" to="/findAllEvents">
