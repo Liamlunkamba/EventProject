@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Card.css";
-//I am now goin to create a UseNavigation hook which will navigate between different pages without reloading the whole app
+
 const Card = ({ id, name, address, date, URL, description, attendees }) => {
   const navigate = useNavigate();
 
@@ -13,16 +12,15 @@ const Card = ({ id, name, address, date, URL, description, attendees }) => {
 
   return (
     <div
-      className="card"
+      className="bg-gray-100 rounded-lg shadow-lg overflow-hidden m-5 w-72 transition-transform duration-300 hover:scale-105 cursor-pointer"
       onClick={handleCardClick}
       key={id}
-      style={{ cursor: "pointer" }}
     >
-      <img src={URL} alt={name} className="card-image" />
-      <div className="card-content">
-        <h1>{name}</h1>
-        <h2>{address}</h2>
-        <h3>{date}</h3>
+      <img src={URL} alt={name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h1 className="text-xl font-bold mb-2">{name}</h1>
+        <h2 className="text-md text-gray-600 mb-1">{address}</h2>
+        <h3 className="text-sm text-gray-500">{date}</h3>
       </div>
     </div>
   );

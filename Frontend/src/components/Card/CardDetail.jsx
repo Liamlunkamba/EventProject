@@ -1,26 +1,21 @@
-
 import React, { useState, useContext, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import { AuthContext } from "../auth/AuthContext";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "./CardDetail.css";
 
 const CardDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { id, name, address, date, URL, description, attendees } =
-    location.state;
+  const { id, name, address, date, URL, description, attendees } = location.state;
 
   const { user } = useContext(AuthContext);
   const [message, setMessage] = useState("");
   const [coords, setCoords] = useState([51.505, -0.09]); // Default coordinates (London)
   const [loadingMap, setLoadingMap] = useState(true);
 
-  const isAttending =
-    attendees?.length > 0 && user?.email && attendees.includes(user.email);
+  const isAttending = attendees?.length > 0 && user?.email && attendees.includes(user.email);
 
   // Geocode the address to get coordinates
   useEffect(() => {
@@ -70,8 +65,7 @@ const CardDetail = () => {
       });
 
       setMessage("Successfully registered for the event!");
-      setTimeout(()=>navigate("/findAllEvents"),1000)
-      
+      setTimeout(() => navigate("/findAllEvents"), 1000);
     } catch (error) {
       setMessage("Failed to register for the event. Please try again.");
       console.error("Error during attend request:", error);
@@ -85,9 +79,7 @@ const CardDetail = () => {
     }
 
     try {
-      const updatedAttendees = attendees.filter(
-        (email) => email !== user.email
-      );
+      const updatedAttendees = attendees.filter((email) => email !== user.email);
 
       await axios.put(`http://localhost:8080/events/${id}`, {
         id: id,
@@ -100,8 +92,7 @@ const CardDetail = () => {
       });
 
       setMessage("Successfully withdrawn from the event!");
-      setTimeout(()=>navigate("/findAllEvents"),1000)
-      
+      setTimeout(() => navigate("/findAllEvents"), 1000);
     } catch (error) {
       setMessage("Failed to withdraw from the event. Please try again.");
       console.error("Error during withdraw request:", error);
@@ -109,30 +100,36 @@ const CardDetail = () => {
   };
 
   return (
-    <div className="card-detail-container">
-      <h1>{name}</h1>
+    <div className="p-10 text-center">
+      <h1 className="text-4xl font-bold mb-4">{name}</h1>
 
-      <img src={URL} alt={name} className="card-detail-image" />
-      <h2>{address}</h2>
-      <h3>{date}</h3>
-      <p>{description}</p>
+      <img src={URL} alt={name} className="w-full max-w-2xl mx-auto rounded-lg mb-5" />
+      <h2 className="text-xl text-gray-600 mb-2">{address}</h2>
+      <h3 className="text-lg text-gray-500 mb-2">{date}</h3>
+      <p className="text-base text-gray-700">{description}</p>
 
       {isAttending ? (
-        <button onClick={handleWithdraw} className="withdraw-button">
+        <button
+          onClick={handleWithdraw}
+          className="bg-red-600 text-white py-2 px-4 rounded-lg mt-5 hover:bg-red-500"
+        >
           Withdraw
         </button>
       ) : (
-        <button onClick={handleAttend} className="attend-button">
+        <button
+          onClick={handleAttend}
+          className="bg-green-600 text-white py-2 px-4 rounded-lg mt-5 hover:bg-green-500"
+        >
           Attend
         </button>
       )}
 
-      {message && <p className="message">{message}</p>}
+      {message && <p className="text-blue-600 mt-5">{message}</p>}
 
       {/* Show map if coordinates are loaded */}
       {!loadingMap ? (
-        <div className="map-container">
-          <MapContainer center={coords} zoom={13} scrollWheelZoom={false}>
+        <div className="h-96 mt-5">
+          <MapContainer center={coords} zoom={13} scrollWheelZoom={false} className="w-full h-full">
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -141,11 +138,7 @@ const CardDetail = () => {
               <Popup>
                 {name} <br /> {address}
                 <br />
-                <a
-                  href={googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
                   Get Directions
                 </a>
               </Popup>
@@ -160,3 +153,4 @@ const CardDetail = () => {
 };
 
 export default CardDetail;
+

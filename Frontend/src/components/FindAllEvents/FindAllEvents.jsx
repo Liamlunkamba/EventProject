@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../Card/Card";
-import "./FindAllEvents.css";
+
 const FindAllEvents = () => {
   const [events, setEvents] = useState([]);
 
@@ -17,11 +17,11 @@ const FindAllEvents = () => {
 
     fetchEventsData();
   }, []);
-// We are going to use the return component which is going to return the HTML-like jsx code that will be displayed on the webpage 
+
   return (
-    <div className="events-container">
-      <h1>Find All Events</h1>
-      <div className="cards-grid">
+    <div className="px-6 py-16 text-center">
+      <h1 className="text-3xl font-semibold mb-12">Find All Events</h1>
+      <div className="flex flex-wrap justify-center gap-6">
         {events.map((event) => (
           <Card
             key={event.id}
@@ -40,3 +40,4 @@ const FindAllEvents = () => {
 };
 
 export default FindAllEvents;
+

@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/AuthContext";
-import "./Login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -63,11 +62,16 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h1>Login</h1>
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <form
+        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
+        onSubmit={handleSubmit}
+      >
+        <h1 className="text-2xl font-semibold text-center mb-6">Login</h1>
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" className="text-sm font-medium text-gray-700">
+          Email
+        </label>
         <input
           type="email"
           id="email"
@@ -76,21 +80,12 @@ const Login = () => {
           onChange={handleChange}
           placeholder="Enter your email"
           required
+          className="w-full p-3 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
         />
 
-{/* <label htmlFor="password">Password</label>
-<input
-  type="password"
-  id="password"
-  name="password"
-  value={formData.password} 
-  placeholder="Enter your password"
-  required
-/> */}
-     {/* The above code did not work so I had to create another one which I had to implement other codes 
-      I noticed that the above code was not working because it would
-       prevent the input field from updating as the user types because the onChange event won’t trigger.*/}
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" className="text-sm font-medium text-gray-700">
+          Password
+        </label>
         <input
           type="password"
           id="password"
@@ -99,15 +94,26 @@ const Login = () => {
           onChange={handleChange}
           placeholder="Enter your password"
           required
+          className="w-full p-3 mb-6 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
         />
 
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        {successMessage && <p className="success-message">{successMessage}</p>}
+        {errorMessage && (
+          <p className="text-red-500 text-sm mb-4 text-center">{errorMessage}</p>
+        )}
+        {successMessage && (
+          <p className="text-green-500 text-sm mb-4 text-center">{successMessage}</p>
+        )}
 
-        <button type="submit">Login</button>
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition duration-300"
+        >
+          Login
+        </button>
       </form>
     </div>
   );
 };
 
 export default Login;
+

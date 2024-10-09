@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./AdminEvents.css";
 
 const AdminEvents = () => {
   const [events, setEvents] = useState([]);
@@ -19,7 +18,6 @@ const AdminEvents = () => {
     fetchEvents();
   }, []);
 
-  // Delete an event
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8080/events/${id}`);
@@ -34,35 +32,35 @@ const AdminEvents = () => {
   };
 
   return (
-    <div className="admin-events-page">
-      <h1>Manage Events</h1>
+    <div className="p-6 max-w-6xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6">Manage Events</h1>
 
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className="text-red-500 mb-4">{error}</p>}
 
-      <div className="events-grid">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.length > 0 ? (
           events.map((event) => (
-            <div key={event.id} className="event-card">
+            <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
               <img
                 src={event.imageURL}
                 alt={event.name}
-                className="event-image"
+                className="w-full h-48 object-cover"
               />
-              <div className="event-details">
-                <h2>{event.name}</h2>
-                <p>{event.address}</p>
-                <p>{event.date}</p>
-                <p>{event.description}</p>
-                <div className="event-actions">
+              <div className="p-4 flex-1">
+                <h2 className="text-xl font-semibold mb-2">{event.name}</h2>
+                <p className="text-gray-600 mb-1">{event.address}</p>
+                <p className="text-gray-600 mb-1">{event.date}</p>
+                <p className="text-gray-600 mb-4">{event.description}</p>
+                <div className="flex justify-between mt-auto">
                   <button
                     onClick={() => handleEdit(event.id)}
-                    className="edit-button"
+                    className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(event.id)}
-                    className="delete-button"
+                    className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700"
                   >
                     Delete
                   </button>
@@ -71,7 +69,7 @@ const AdminEvents = () => {
             </div>
           ))
         ) : (
-          <p>No events available</p>
+          <p className="text-gray-600">No events available</p>
         )}
       </div>
     </div>

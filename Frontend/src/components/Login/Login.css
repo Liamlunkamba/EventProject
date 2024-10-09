@@ -1,4 +1,4 @@
-.login-container {
+/* .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   background-color: #f5f5f5;
 }
 /* Styling the login page  */
-.login-form {
+/* .login-form {
   background-color: white;
   padding: 40px;
   border-radius: 10px;
@@ -76,5 +76,5 @@
   color: green;
   font-size: 14px;
   margin-bottom: 15px;
-  text-align: center;
-}
+  text-align: center; */
+/* } */
