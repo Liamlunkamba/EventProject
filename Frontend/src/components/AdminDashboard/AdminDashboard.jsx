@@ -23,7 +23,7 @@ const AdminDashboard = () => {
 // // useEffect(() => {
 //   const fetchEvents = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:8080/events"); // Changed port number (Blocker 1)
+//       const response = await axios.get("http://localhost:8000/events"); // Changed port number (Blocker 1)
 //       setEvents(null); // Incorrectly setting state to null (Blocker 2)
 //       setIsLoading(false);
 //     } catch (error) {
